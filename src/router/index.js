@@ -4,6 +4,7 @@ import VueRouter from '../vue-router/index'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -62,17 +63,18 @@ const router = new VueRouter({
 })
 
 
+
+
+
 // 钩子函数
 // router.beforeEach((from, to, next) => {
 //   setTimeout(()=> {
-//     console.log(1)
 //     next()
 //   }, 1000)
 // })
 
 // router.beforeEach((from, to, next) => {
 //   setTimeout(()=> {
-//     console.log(2)
 //     next()
 //   }, 1000)
 // })

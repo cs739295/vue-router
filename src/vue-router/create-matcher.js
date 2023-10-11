@@ -1,6 +1,10 @@
 import createRouteMap from './create-route-map';
 
+/**
+ * 创建一个匹配器
+ */
 export default function createMatcher(routes) {
+
 
     const { pathMap } = createRouteMap(routes);
 

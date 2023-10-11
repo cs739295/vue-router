@@ -14,9 +14,12 @@ export default class VueRouter {
 
         let mode = options.mode || 'hash'; // hash | history
 
+        // 工厂模式: 路由系统
         if (mode === 'hash') {
+            // hash 路由
             this.history = new HashHistory(this);
         } else if (mode === 'history') {
+            // browser 路由
             this.history = new BrowserHistory(this);
         }
     }
@@ -38,11 +41,13 @@ export default class VueRouter {
         let history = this.history;
 
         // 根据路径找到对应的组件进行渲染, 并监听路由变化
+        // 第一次检测不到，要手动执行一次
         history.transitionTo(history.getCurrentLocation(), () => {
             history.setupListener(); // 初始化时监听路由
         });
 
         // 传入一个回调函数，每次路由切换的时候都需要调要listen方法中的回调函数
+        // 改变响应式数据_route，使得组件进行刷新
         history.listen((newRoute) => {
             app._route = newRoute;
         });

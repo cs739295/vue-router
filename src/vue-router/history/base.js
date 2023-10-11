@@ -35,6 +35,8 @@ class Base {
     }
     transitionTo(location, listener) {
         const record = this.router.match(location);
+
+        // /about/a： 表示要渲染两个组件，先渲染/about 对应的组件，然后渲染/about/a 对应的组件
         let route = createRoute(record, { path: location });
 
         // 避免默认值 与 初始化的path相同，导致match错误
